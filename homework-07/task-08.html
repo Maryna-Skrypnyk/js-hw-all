@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,10 +11,20 @@
           Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         line-height: 1.5;
       }
+      .box {
+        margin: 5px 0 0;
+      }
     </style>
   </head>
   <body>
     <p><a href="index.html">На головну</a></p>
+    <div id="controls">
+      <input type="number" min="0" max="100" step="1" />
+      <button type="button" data-action="render">Створити</button>
+      <button type="button" data-action="destroy">Очистити</button>
+    </div>
+
+    <div id="boxes"></div>
     <script src="js/task-08.js" type="module"></script>
   </body>
 </html>
