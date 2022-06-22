@@ -63,6 +63,7 @@ const imgModalOpen = (src, alt, img) => {
   refs.lightboxImg.src = src;
   refs.lightboxImg.alt = alt;
   refs.lightboxImg.dataset.index = arrGalleryListCopy.indexOf(img);
+  document.body.classList.add('modal-open'); // при відкритому модальному вікні на body навішуємо клас для відміни скролу
 
   window.addEventListener('keydown', onModalChangeByKey);
 };
@@ -81,6 +82,7 @@ const onModalClose = () => {
   refs.lightboxImg.src = '';
   refs.lightboxImg.alt = '';
   refs.lightboxImg.removeAttribute('data-index');
+  document.body.classList.remove('modal-open'); // при закритті модального вікна з body видаляємо клас, щоб відновити скрол
 
   window.removeEventListener('keydown', onModalChangeByKey);
 };
