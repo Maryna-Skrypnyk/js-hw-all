@@ -5,3 +5,7 @@
 ## [homework-07](homework-07)
 
 ## [homework-08](homework-08)
+
+## [lazy-load-08](lazy-load-08)
+
+## [homework-09](homework-09)
