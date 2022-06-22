@@ -21,6 +21,9 @@ const makeGallery = images => {
     href="${original}"
   >
     <img
+    loading="lazy"
+    width="392"
+    height="240"
       class="gallery__image"
       src="${preview}"
       data-source="${original}"
@@ -122,3 +125,16 @@ const lightboxImageMove = step => {
 refs.galleryList.addEventListener('click', onImgOpen);
 refs.btnClose.addEventListener('click', onModalClose);
 refs.overlay.addEventListener('click', onModalClose);
+
+/// 10. Реалізація функції lazy-loading при загрузці картинок у браузері.
+
+const imgs = refs.galleryList.querySelectorAll('img[loading="lazy"]');
+
+imgs.forEach(image => {
+  image.addEventListener('load', onImageLoaded, { once: true });
+});
+
+function onImageLoaded(e) {
+  console.log('Картинка загружена');
+  e.target.classList.add('appear');
+}
