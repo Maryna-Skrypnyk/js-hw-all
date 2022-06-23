@@ -9,3 +9,7 @@
 ## [lazy-load-08](lazy-load-08)
 
 ## [homework-09](homework-09)
+
+## [template-localstorage](template-localstorage)
+
+## [homework-10](homework-10)
