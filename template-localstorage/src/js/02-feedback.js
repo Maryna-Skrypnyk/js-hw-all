@@ -2,64 +2,99 @@ import throttle from 'lodash.throttle';
 import '../css/common.css';
 import '../css/feedback-form.css';
 
-const STORAGE_KEY = 'feedback-msg';
+const STORAGE_KEY = 'feedback-form';
 
 const refs = {
   form: document.querySelector('.js-feedback-form'),
   textarea: document.querySelector('.js-feedback-form  textarea'),
+  inputName: document.querySelector('.js-feedback-form  input[name="name"]'),
 };
 
-refs.form.addEventListener('submit', onFormSubmit);
-refs.textarea.addEventListener('input', throttle(onTextareaInput, 200));
+/////////////// 1. Збереження в localStorage рядка - повідомлення з textarea
 
-populateTextarea();
+// refs.form.addEventListener('submit', onFormSubmit);
+// refs.textarea.addEventListener('input', throttle(onTextareaInput, 200));
+
+// populateTextarea();
+
+// /*
+//  * - Зупиняємо поведінку по замовчуванню
+//  * - Видаляємо повідомлення зі сховища
+//  * - Очищуємо форму
+//  */
+// function onFormSubmit(evt) {
+//   evt.preventDefault();
+
+//   console.log('Відправляємо форму');
+//   evt.currentTarget.reset();
+//   localStorage.removeItem(STORAGE_KEY);
+// }
+
+// /*
+//  * - Отримуємо значення поля
+//  * - Зберігаємо його у сховище
+//  * - Можна додати throttle
+//  */
+// function onTextareaInput(evt) {
+//   const message = evt.target.value;
+
+//   localStorage.setItem(STORAGE_KEY, message);
+// }
+
+// /*
+//  * - Отримуємо значення зі сховища
+//  * - Якщо там щось було, оновлюємо DOM
+//  */
+// function populateTextarea() {
+//   const savedMessage = localStorage.getItem(STORAGE_KEY);
+
+//   if (savedMessage) {
+//     refs.textarea.value = savedMessage;
+//   }
+// }
+
+/////////////// 2. Збереження в localStorage об'єкта - всі input форми
+// Зробити так, щоб зберігало не лише повідомлення, але й ім'я, і все в одному об'єкті
+
+refs.form.addEventListener('submit', onFormSubmit);
+refs.form.addEventListener('input', throttle(onInput, 200));
+
+const formData = {};
+populateInput();
 
 /*
- * - Останавливаем поведение по умолчанию
- * - Убираем сообщение из хранилища
- * - Очищаем форму
+ * - Зупиняємо поведінку по замовчуванню
+ * - Видаляємо об'єкт зі сховища
+ * - Очищуємо форму
  */
 function onFormSubmit(evt) {
   evt.preventDefault();
 
-  console.log('Отправляем форму');
+  console.log('Відправляємо форму');
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
 
 /*
- * - Получаем значение поля
- * - Сохраняем его в хранилище
- * - Можно добавить throttle
+ * - Отримуємо значення полей
+ * - Зберігаємо їх в сховище як об'єкт в вигяді рядка
+ * - Можна додати throttle
  */
-function onTextareaInput(evt) {
-  const message = evt.target.value;
+function onInput(e) {
+  formData[e.target.name] = e.target.value;
 
-  localStorage.setItem(STORAGE_KEY, message);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
 /*
- * - Получаем значение из хранилища
- * - Если там что-то было, обновляем DOM
+ * - Отримуємо об'єкт зі сховища
+ * - Якщо там щось було, оновлюємо DOM
  */
-function populateTextarea() {
-  const savedMessage = localStorage.getItem(STORAGE_KEY);
+function populateInput() {
+  const savedInputObj = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-  if (savedMessage) {
-    refs.textarea.value = savedMessage;
+  if (savedInputObj) {
+    refs.textarea.value = savedInputObj.message || refs.textarea.placeholder;
+    refs.inputName.value = savedInputObj.name || refs.inputName.value;
   }
 }
-
-// Домой
-// сделать так чтобы сохраняло не только сообщение но и имя, и все в одном обьекте
-
-// const formData = {};
-
-// refs.form.addEventListener('input', e => {
-//   // console.log(e.target.name);
-//   // console.log(e.target.value);
-
-//   formData[e.target.name] = e.target.value;
-
-//   console.log(formData);
-// });
