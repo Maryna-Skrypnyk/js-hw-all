@@ -1,14 +1,11 @@
-// import './sass/index.scss';
+import menuTemplate from './templates/articles.hbs';
 import menu from './menu.json';
+import './sass/index.scss';
 
 const refs = {
   menuList: document.querySelector('.js-menu'),
 };
 
-// import menuTemplate from '../templates/articles.hbs';
+const menuMarkup = menuTemplate(menu);
 
-const makeMenuMarkup = articles => {
-  menuTemplate(articles);
-};
-
-refs.menuList.insertAdjacentHTML('beforeend', makeMenuMarkup(JSON.parse(menu)));
+refs.menuList.insertAdjacentHTML('beforeend', menuMarkup);
