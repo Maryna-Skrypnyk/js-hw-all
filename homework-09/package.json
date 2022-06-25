@@ -2,7 +2,7 @@
   "name": "homework-09",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://Maryna-Skrypnyk.github.io/js-hw-all/",
+  "homepage": "https://Maryna-Skrypnyk.github.io/js-hw-all/homework-09",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /js-hw-all/homework-09/",

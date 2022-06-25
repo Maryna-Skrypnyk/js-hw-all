@@ -9,3 +9,5 @@ const refs = {
 const menuMarkup = menuTemplate(menu);
 
 refs.menuList.insertAdjacentHTML('beforeend', menuMarkup);
+
+console.log(refs.menuList.insertAdjacentHTML('beforeend', menuMarkup));
