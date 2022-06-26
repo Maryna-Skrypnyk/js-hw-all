@@ -1,4 +1,4 @@
-import menuTemplate from './templates/articles.hbs';
+import menuTemplate from './templates/menu.hbs';
 import menu from './menu.json';
 import './sass/index.scss';
 
