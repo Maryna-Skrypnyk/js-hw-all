@@ -13,4 +13,4 @@ module.exports=[{id:"XWaQXcbk0",name:"Картофель, запеченный �
 },{"../../node_modules/modern-normalize/modern-normalize.css":"Y5dV"}],"Focm":[function(require,module,exports) {
 "use strict";var e=s(require("./templates/menu.hbs")),n=s(require("./menu.json"));function s(e){return e&&e.__esModule?e:{default:e}}require("./sass/index.scss");var t={menuList:document.querySelector(".js-menu")},u=(0,e.default)(n.default);t.menuList.insertAdjacentHTML("beforeend",u),console.log(t.menuList.insertAdjacentHTML("beforeend",u));
 },{"./templates/menu.hbs":"dgbP","./menu.json":"mA8c","./sass/index.scss":"dKQo"}]},{},["Focm"], null)
-//# sourceMappingURL=/js-hw-all/homework-10/src.85021908.js.map
+//# sourceMappingURL=/js-hw-all/src.85021908.js.map
