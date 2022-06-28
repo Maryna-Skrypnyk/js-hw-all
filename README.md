@@ -10,6 +10,6 @@
 
 ## [homework-09](homework-09)
 
-## [template-localstorage](template-localstorage)
+## [template-localstorage-10](template-localstorage-10)
 
 ## [homework-10](homework-10)
