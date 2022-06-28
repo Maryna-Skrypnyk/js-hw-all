@@ -11,7 +11,7 @@ const refs = {
 
 refs.menuList.insertAdjacentHTML('beforeend', menuTemplate(menu));
 
-/// 2.
+/// 2. Змінюємо тему на подію Change і записуємо це в localStorage.
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -46,3 +46,15 @@ const savedTheme = () => {
 savedTheme();
 
 refs.themeSwitch.addEventListener('change', onSwitchToggle);
+
+//// 3. Анімуємо ліниве завантаження картинок.
+
+const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+lazyImages.forEach(image => {
+  image.addEventListener('load', onImageLoaded, { once: true });
+});
+
+function onImageLoaded(e) {
+  e.target.classList.add('appear');
+}
