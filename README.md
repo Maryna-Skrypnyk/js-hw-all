@@ -13,3 +13,5 @@
 ## [template-localstorage-10](template-localstorage-10)
 
 ## [homework-10](homework-10)
+
+## [web-app-basics](web-app-basics)
