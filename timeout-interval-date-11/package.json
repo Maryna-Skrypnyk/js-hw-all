@@ -1,0 +1,29 @@
+{
+  "name": "js-22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryna-skrypnyk/js-hw-all.git"
+  },
+  "keywords": [],
+  "author": "Maryna- Srypnyk <marina.skrypnyk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maryna-skrypnyk/js-hw-all/issues"
+  },
+  "homepage": "https://github.com/maryna-skrypnyk/js-hw-all#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  },
+  "dependencies": {
+    "bootstrap.native": "^3.0.13",
+    "lodash.throttle": "^4.1.1"
+  }
+}
