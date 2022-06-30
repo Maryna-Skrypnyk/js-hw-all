@@ -1,11 +1,11 @@
 {
-  "name": "homework-11",
+  "name": "homework-11-color-switch",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://Maryna-Skrypnyk.github.io/js-hw-all",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /js-hw-all/homework-11/"
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /js-hw-all/homework-11-color-switch/"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "author": "Maryna Skrypnyk <marina.skrypnyk@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Maryna-Skrypnyk/js-hw-all/homework-11/issues"
+    "url": "https://github.com/Maryna-Skrypnyk/js-hw-all/homework-11-color-switch/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"

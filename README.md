@@ -17,3 +17,9 @@
 ## [web-app-basics](web-app-basics)
 
 ## [timeout-interval-date-11](timeout-interval-date-11)
+
+## [homework-11-color-switch](homework-11-color-switch)
+
+## [homework-11-timer](homework-11-timer)
+
+## [homework-11-promisification](homework-11-promisification)
