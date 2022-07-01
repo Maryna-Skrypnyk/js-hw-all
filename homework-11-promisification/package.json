@@ -1,0 +1,30 @@
+{
+  "name": "homework-11-promisification",
+  "version": "2.0.0",
+  "description": "",
+  "homepage": "https://Maryna-Skrypnyk.github.io/js-hw-all",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /js-hw-all/homework-11-promisification/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryna-skrypnyk/js-hw-all.git"
+  },
+  "keywords": [],
+  "author": "Maryna Skrypnyk <marina.skrypnyk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maryna-Skrypnyk/js-hw-all/homework-11-promisification/issues"
+  },
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
