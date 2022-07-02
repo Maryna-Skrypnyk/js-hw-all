@@ -3,6 +3,14 @@
 
   &__name {
     margin-top: 0;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 40px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 50px;
+    }
   }
 
   &__img {
@@ -12,11 +20,29 @@
   &__flag {
     display: inline-block;
     border-radius: 10px;
+
+    @media screen and (min-width: $tablet) {
+      width: 350px;
+      height: 200px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 450px;
+      height: 300px;
+    }
   }
 
   &__property {
     margin-top: 0;
     margin-bottom: 20px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 30px;
+    }
 
     & span {
       font-weight: 700;
@@ -26,6 +52,14 @@
   &__property-lang {
     margin-top: 0;
     margin-bottom: 10px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 30px;
+    }
 
     & span {
       font-weight: 700;
@@ -38,7 +72,17 @@
 
   &__language {
     padding: 5px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 30px;
+    }
   }
+
+  /////////////////////////////
 
   &__list {
     padding: 0;
@@ -48,5 +92,19 @@
 
   &__item {
     padding: 5px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 30px;
+    }
   }
+}
+
+.notice {
+  // top: 30%;
+  left: 50%;
+  transform: translate(-50%, -15%);
 }

@@ -20,6 +20,14 @@ h1 {
   color: gray;
   font-size: 20px;
   line-height: 1.14;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 40px;
+  }
 }
 
 .label {
@@ -27,14 +35,40 @@ h1 {
   padding: 0;
   margin-bottom: 30px;
   font-size: 16px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 30px;
+  }
 }
 
 .input {
   margin: 0;
   padding: 5px;
+  height: 40px;
+  width: 280px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 10px;
+    // height: 40px;
+    width: 350px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 20px;
+    height: 60px;
+    width: 450px;
+  }
 }
 
 .input[placeholder] {
   margin: 0;
   padding: 5px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 10px;
+  }
 }

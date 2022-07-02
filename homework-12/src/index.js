@@ -3,6 +3,7 @@ import countriesListTpl from './templates/countries.hbs';
 import debounce from 'lodash.debounce';
 import API from './js/fetch-api';
 import getRefs from './js/get-refs';
+import notify from './js/pnotify';
 
 const refs = getRefs();
 
@@ -16,8 +17,8 @@ const renderCountriesList = countries => {
   refs.countryContainer.insertAdjacentHTML('beforeend', markup);
 };
 
-const onFetchError = error => {
-  alert('Упс, что-то пошло не так!');
+const onFetchError = () => {
+  notify.errorNotify('Request data is not displayed. Try again later.');
 };
 
 const clearCountry = () => {
@@ -33,13 +34,20 @@ const onInputChange = e => {
 
   API.fetchCountries(searchQuery)
     .then(country => {
-      console.log(country);
       if (country.length < 2) {
         renderCountryCard(country);
+        notify.successNotify(`You found the country ${country[0].name}!`);
       } else if (country.length > 1 && country.length < 10) {
         renderCountriesList(country);
+        notify.noticeNotify(
+          `You have found ${country.length} countries for your request. Enter a more specific query.`
+        );
+      } else if (country.length > 10) {
+        notify.infoNotify(
+          `You have found more than 10 countries for your request. Enter a more specific query.`
+        );
       } else {
-        console.log('No');
+        notify.errorNotify(`No country was found for your request.`);
       }
     })
     .catch(onFetchError);
