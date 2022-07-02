@@ -4,8 +4,10 @@
   "description": "",
   "homepage": "https://maryna-skrypnyk.github.io/js-hw-all",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /js-hw-all/homework-12/"
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /js-hw-all/homework-12/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "gh-pages": "^4.0.0",
     "parcel": "^2.6.0",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-reporter-clean-dist": "^1.0.4",
