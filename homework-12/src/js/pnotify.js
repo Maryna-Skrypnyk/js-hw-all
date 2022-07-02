@@ -1,4 +1,4 @@
-import { success, notice, error, alert, info } from '@pnotify/core';
+import { success, notice, error, info } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
 
 const successNotify = text => {
