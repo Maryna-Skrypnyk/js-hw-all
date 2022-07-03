@@ -5,8 +5,6 @@ const successNotify = text => {
   success({
     title: 'Successful request!',
     text,
-    // styling: 'custom',
-    // addModelessClass: 'nonblock',
     delay: 2000,
     addClass: 'notice',
   });
