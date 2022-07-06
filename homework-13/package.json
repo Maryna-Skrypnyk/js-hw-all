@@ -5,7 +5,7 @@
   "homepage": "https://maryna-skrypnyk.github.io/js-hw-all",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /js-hw-all/homework-13/",
+    "build": "parcel build src/*.html --public-url /js-hw-all/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
