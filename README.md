@@ -29,3 +29,11 @@
 ## [rest-pagination-12](rest-pagination-12)
 
 ## [homework-12](homework-12)
+
+## [homework-12-async-await](homework-12-async-await)
+
+## [crud-13](crud-13)
+
+## [async-await-13](async-await-13)
+
+## [homework-13](homework-13)
