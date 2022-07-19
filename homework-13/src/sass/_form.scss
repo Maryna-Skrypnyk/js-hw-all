@@ -1,0 +1,77 @@
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // padding: 8px;
+}
+
+.form-inline {
+  margin: 0;
+  margin-bottom: 14px;
+  padding-top: 20px;
+}
+
+.form-group {
+  @media screen and (min-width: 466px) {
+    margin-right: 10px;
+  }
+}
+
+.form-control {
+  padding: 5px 10px;
+  margin-right: 10px;
+  min-width: 200px;
+  min-height: 30px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+
+.notice {
+  // top: 30%;
+  left: 50%;
+  transform: translate(-50%, 42%);
+
+  @media screen and (min-width: 481px) {
+    transform: translate(-84%, 42%);
+  }
+
+  @media screen and (min-width: $tablet) {
+    transform: translate(-60%, 42%);
+  }
+
+  @media screen and (min-width: 1200px) {
+    transform: translate(-30%, 42%);
+  }
+
+  @media screen and (min-width: $desktop) {
+    transform: translate(-22%, 42%);
+  }
+}
+
+.pnotify-title .pnotify-pre-line {
+  font-size: 18px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 25px;
+  }
+}
+
+.pnotify-text .pnotify-pre-line {
+  font-size: 14px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 18px;
+  }
+}
