@@ -1,4 +1,3 @@
-// import bootstrap from 'bootstrap';
 import galleryTpl from './templates/gallery.hbs';
 import PhotoApiService from './js/apiService';
 import {
@@ -48,13 +47,13 @@ function fetchPhotos() {
   photoApiService.fetchPhotos().then(photos => {
     if (photos.length === 0) {
       loadMoreButton.hide();
-      return errorNotify('Sorry, but there are no such photos!');
+      return errorNotify('There are no such photos!');
     }
 
     if (photos.length < 12 && photos.length > 0) {
       loadMoreButton.showEnd();
       makePhotosMarkup(photos);
-      noticeNotify('These are the latest photos by your request!');
+      noticeNotify('These are the latest photos!');
       return;
     }
 
@@ -80,7 +79,7 @@ function onLoadMore() {
       loadMoreButton.showEnd();
       makePhotosMarkup(photos);
       scroll();
-      noticeNotify('These are the latest photos by your request!');
+      noticeNotify('These are the latest photos!');
       return;
     }
 
