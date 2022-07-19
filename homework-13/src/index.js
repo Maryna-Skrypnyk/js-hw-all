@@ -18,11 +18,6 @@ const loadMoreButton = new LoadMoreButton({
   hidden: true,
 });
 
-// const searchButton = new LoadMoreButton({
-//   selector: '#search-form',
-//   hidden: true,
-// });
-
 const photoApiService = new PhotoApiService();
 
 refs.searchForm.addEventListener('submit', onSearchForm);
@@ -53,7 +48,7 @@ function fetchPhotos() {
   photoApiService.fetchPhotos().then(photos => {
     if (photos.length === 0) {
       loadMoreButton.hide();
-      return errorNotify('Sorry, but there are no photos at your request!');
+      return errorNotify('Sorry, but there are no such photos!');
     }
 
     if (photos.length < 12 && photos.length > 0) {
@@ -66,7 +61,7 @@ function fetchPhotos() {
     makePhotosMarkup(photos);
     loadMoreButton.enable();
     // scroll();
-    successNotify('You have found photos by your request!');
+    successNotify('You have found photos!');
     return;
   });
 }
@@ -111,5 +106,5 @@ function scroll() {
     block: 'end',
   });
 
-  window.scrollBy(0, 480);
+  window.scrollBy(0, 488);
 }

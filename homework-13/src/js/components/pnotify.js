@@ -12,7 +12,7 @@ const errorNotify = text => {
 
 const successNotify = text => {
   success({
-    title: 'Successful request!',
+    title: 'Successful!',
     text,
     delay: 2000,
     addClass: 'notice',

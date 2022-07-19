@@ -3,12 +3,18 @@
   margin-right: auto;
   margin-bottom: 30px;
   padding: 0;
+  padding-top: 144px;
+
+  @media screen and (min-width: 476px) {
+    padding-top: 90px;
+  }
 
   @media screen and (min-width: $tablet) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
-    padding: 0;
+    padding: 90px 0 0;
+    // padding-top: 90px;
     margin: 0;
     margin-bottom: 30px;
     list-style: none;

@@ -30,26 +30,29 @@
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <!-- <include src="./partials/example.html"></include> -->
+
     <div class="container">
-      <form class="search-form form-inline" id="search-form">
-        <div class="form-group mx-sm-3 mb-3">
-          <input
-            type="text"
-            class="form-control"
-            name="query"
-            autocomplete="off"
-            id="searchQuery"
-            placeholder="Search images..."
-          />
-        </div>
-        <button
-          type="submit"
-          class="btn btn-primary mb-3"
-          data-action="search-btn"
-        >
-          Search
-        </button>
-      </form>
+      <div class="form-container">
+        <form class="search-form form-inline" id="search-form">
+          <div class="form-group mx-sm-3 mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="query"
+              autocomplete="off"
+              id="searchQuery"
+              placeholder="Search images..."
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary mb-3"
+            data-action="search-btn"
+          >
+            Search
+          </button>
+        </form>
+      </div>
 
       <ul class="gallery js-gallery-list">
         <!-- Список <li> с карточками изображений -->
