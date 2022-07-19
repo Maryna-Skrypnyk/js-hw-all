@@ -1,0 +1,31 @@
+{
+  "name": "infinite-scroll-14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "server": "json-server --watch db.json -p 4040 -d 300"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryna-skrypnyk/js-hw-all.git"
+  },
+  "keywords": [],
+  "author": "Maryna Skrypnyk <marina.skrypnyk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maryna-skrypnyk/js-hw-all/issues"
+  },
+  "homepage": "https://github.com/maryna-skrypnyk/js-hw-all/infinite-scroll-14#readme",
+  "devDependencies": {
+    "json-server": "^0.16.2",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  },
+  "dependencies": {
+    "infinite-scroll": "^3.0.6"
+  }
+}

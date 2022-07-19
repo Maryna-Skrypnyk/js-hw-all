@@ -1,0 +1,96 @@
+.form-container {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  // background-color: #aec3e9;
+  background-color: #f1e870;
+  filter: drop-shadow(0 2px 10px rgba(79, 150, 254, 0.4));
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-inline {
+  margin: 0;
+  // margin-bottom: 14px;
+  padding-top: 16px;
+}
+
+.form-group {
+  @media screen and (min-width: 426px) {
+    margin-right: 10px;
+  }
+}
+
+.form-control {
+  padding: 5px 10px;
+  margin-right: 10px;
+  min-width: 200px;
+  min-height: 30px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+
+.notice {
+  // top: 30%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+
+  @media screen and (min-width: 327px) {
+    transform: translate(-50%, 100%);
+  }
+
+  @media screen and (min-width: 476px) {
+    transform: translate(-50%, 46%);
+  }
+
+  @media screen and (min-width: 481px) {
+    transform: translate(-84%, 49%);
+  }
+
+  @media screen and (min-width: $tablet) {
+    transform: translate(-60%, 50%);
+  }
+
+  @media screen and (min-width: 1200px) {
+    transform: translate(-30%, 50%);
+  }
+
+  @media screen and (min-width: $desktop) {
+    transform: translate(-22%, 48%);
+  }
+}
+
+.pnotify-title .pnotify-pre-line {
+  font-size: 18px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 25px;
+  }
+}
+
+.pnotify-text .pnotify-pre-line {
+  font-size: 14px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 18px;
+  }
+}
