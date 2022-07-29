@@ -1,8 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-// const API_KEY = process.env.API_KEY;
-
-const API_KEY = '22687504-cd17fd3731d2b66e1d47a182f';
+const API_KEY = process.env.API_KEY;
 
 const BASE_URL = 'https://pixabay.com/api';
 
