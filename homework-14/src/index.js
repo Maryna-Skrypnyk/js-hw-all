@@ -16,28 +16,26 @@ const loadMoreButton = new LoadMoreButton({
   selector: '[data-action="load-more"]',
   hidden: true,
 });
-
 const photoApiService = new PhotoApiService();
 
 refs.searchForm.addEventListener('submit', onSearchForm);
-loadMoreButton.refs.button.addEventListener('click', onLoadMore);
 
 function onSearchForm(e) {
   e.preventDefault();
   clearPhotosContainer();
+
   photoApiService.query = e.currentTarget.elements.query.value;
+  loadMoreButton.hide();
 
-  if (!photoApiService.query) {
+  if (!photoApiService.query || photoApiService.query.trim() === '') {
     return errorNotify('Enter your request, please!');
-  }
-
-  if (photoApiService.query.trim() === '') {
-    return errorNotify('Enter your request!');
   }
 
   loadMoreButton.show();
   photoApiService.resetPage();
   fetchPhotos();
+
+  // e.currentTarget.elements.query.value = '';
 }
 
 function fetchPhotos() {
@@ -47,10 +45,12 @@ function fetchPhotos() {
   photoApiService.fetchPhotos().then(photos => {
     if (photos.length === 0) {
       loadMoreButton.hide();
-      return errorNotify('There are no such photos!');
+      errorNotify('There are no such photos!');
+      return;
     }
 
     if (photos.length < 12 && photos.length > 0) {
+      loadMoreButton.disable();
       loadMoreButton.showEnd();
       makePhotosMarkup(photos);
       noticeNotify('These are the latest photos!');
@@ -58,52 +58,45 @@ function fetchPhotos() {
     }
 
     makePhotosMarkup(photos);
-    loadMoreButton.enable();
-    // scroll();
+    loadMoreButton.hide();
     successNotify('You have found photos!');
-    return;
-  });
-}
-
-function onLoadMore() {
-  loadMoreButton.disable();
-  loadMoreButton.removeEnd();
-
-  photoApiService.fetchPhotos().then(photos => {
-    if (photos.length === 0) {
-      loadMoreButton.hide();
-      return errorNotify('Please enter the correct query!');
-    }
-
-    if (photos.length < 12 && photos.length > 0) {
-      loadMoreButton.showEnd();
-      makePhotosMarkup(photos);
-      scroll();
-      noticeNotify('These are the latest photos!');
-      return;
-    }
-
-    makePhotosMarkup(photos);
-    loadMoreButton.enable();
-    scroll();
     return;
   });
 }
 
 function makePhotosMarkup(photos) {
   refs.galleryContainer.insertAdjacentHTML('beforeend', galleryTpl(photos));
-  // scroll();
 }
 
 function clearPhotosContainer() {
   refs.galleryContainer.innerHTML = '';
 }
 
-function scroll() {
-  refs.sentinel.scrollIntoView({
-    behavior: 'smooth',
-    block: 'end',
-  });
+const onEntry = entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && photoApiService.query !== '') {
+      photoApiService.fetchPhotos().then(photos => {
+        if (photos.length < 12 && photos.length > 0) {
+          // loadMoreButton.show();
+          loadMoreButton.showEnd();
+          makePhotosMarkup(photos);
+          noticeNotify('These are the latest photos!');
+          return;
+        }
 
-  window.scrollBy(0, 488);
-}
+        makePhotosMarkup(photos);
+        loadMoreButton.show();
+        return;
+      });
+    }
+  });
+};
+
+const options = {
+  // root: document.querySelector('#scrollArea'),
+  rootMargin: '200px',
+  // threshold: 1.0,
+};
+
+const observer = new IntersectionObserver(onEntry, options);
+observer.observe(refs.sentinel);
