@@ -58,7 +58,7 @@ function fetchPhotos() {
     }
 
     makePhotosMarkup(photos);
-    loadMoreButton.hide();
+    // loadMoreButton.hide();
     successNotify('You have found photos!');
     return;
   });
@@ -77,7 +77,6 @@ const onEntry = entries => {
     if (entry.isIntersecting && photoApiService.query !== '') {
       photoApiService.fetchPhotos().then(photos => {
         if (photos.length < 12 && photos.length > 0) {
-          // loadMoreButton.show();
           loadMoreButton.showEnd();
           makePhotosMarkup(photos);
           noticeNotify('These are the latest photos!');
@@ -85,7 +84,6 @@ const onEntry = entries => {
         }
 
         makePhotosMarkup(photos);
-        loadMoreButton.show();
         return;
       });
     }
